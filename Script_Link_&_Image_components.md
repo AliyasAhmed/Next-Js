@@ -1,6 +1,4 @@
-Let's go through the **Image**, **Link**, and **Script** components in Next.js based on your provided examples.
-
----
+# Image, Link, Script in Next.js
 
 ### 1. **Image Component** (`next/image`)
 
