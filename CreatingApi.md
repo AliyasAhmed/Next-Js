@@ -1,4 +1,4 @@
-# **Creating api in Next.js**
+# **Creating API in Next.js**
 As we Know we can use nextjs as `Backend` as well so we can easily Create api in it.
 
 Let's break down **every line** in detail so you can understand exactly what's going on:
