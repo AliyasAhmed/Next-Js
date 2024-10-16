@@ -1,6 +1,44 @@
 # **Creating API in Next.js**
 As we Know we can use nextjs as `Backend` as well so we can easily Create api in it.
 
+```js
+app/page.js
+
+"use client"
+export default function Home() {
+  const handleclick = async () => {
+    let data = {
+      name:"aliyas",
+      role:"coder"
+    }
+    let a = await fetch("/api/add", { method: "POST", headers: { "Content-type": "application/json" },
+      body:JSON.stringify(data),
+    })
+    
+    let res = await a.json()
+    console.log(res)
+  }
+  return (
+    <div>
+      <h1>Next.js api routes demo</h1>
+      <button onClick={handleclick}>Click me</button>
+    </div>
+  );
+}
+```
+
+```js
+api/add/route.js
+
+import { NextResponse } from "next/server"
+export const POST = async (request) =>{
+    let data = await request.json()
+    console.log(data)
+    return NextResponse.json({success:true, data:data})
+
+}
+```
+
 Let's break down **every line** in detail so you can understand exactly what's going on:
 
 ### **Client-Side (React Component)**
