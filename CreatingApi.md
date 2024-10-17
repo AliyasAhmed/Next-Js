@@ -123,7 +123,7 @@ return (
 
 ---
 
-### **Server-Side (API Route)**
+# **Server-Side (API Route)**
 
 ```js
 import { NextResponse } from "next/server"
@@ -142,7 +142,7 @@ export const POST = async (request) => {
 ```js
 let data = await request.json()
 ```
-- This reads the incoming data sent by the client (the `data` object from the `handleclick` function) and converts it from a JSON string into a JavaScript object. The `request.json()` function takes time, so `await` ensures the code waits for the data to be fully received before moving on.
+- This will read data from the client side which we already defined in object form `{name:"aliyas", role:"coder"}` 
 
 ---
 
@@ -156,7 +156,7 @@ console.log(data)
 ```js
 return NextResponse.json({ success: true, data: data })
 ```
-- This sends a JSON response back to the client. It contains two properties:
+- This sends a JSON response back to the client. Its main function is to send the json formatted object so it could be readable.
   1. `success: true` indicates that the operation was successful.
   2. `data: data` sends back the exact same data that the server received, so the client can confirm that the data was received correctly.
 
