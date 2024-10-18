@@ -1,6 +1,7 @@
 # **Creating API in Next.js**
 As we Know we can use nextjs as `Backend` as well so we can easily Create api in it.
 
+we are receiving data from the route.JavaScript to page.JavaScript, after which the data is displayed on the console and terminal
 ```js
 app/page.js
 
@@ -174,4 +175,4 @@ return NextResponse.json({ success: true, data: data })
    - It logs the data in the server console.
    - It sends back a response to the client, confirming that everything worked (`success: true`) and including the data that was sent.
 
-Let me know if this makes more sense now!
+
