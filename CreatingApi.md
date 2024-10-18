@@ -175,4 +175,23 @@ return NextResponse.json({ success: true, data: data })
    - It logs the data in the server console.
    - It sends back a response to the client, confirming that everything worked (`success: true`) and including the data that was sent.
 
+### Here how it works
+
+Exactly! Here's how it works step by step:
+
+1. **page.js (Client-side)**:
+   - The client (page.js) makes a request to **route.js** when you click the button.
+   - It sends data using a **POST** request.
+
+2. **route.js (Server-side)**:
+   - The server (route.js) receives that request.
+   - It processes the data (for example, logs it to the terminal).
+   - It then **responds** back with some JSON data (in this case, `{ success: true, data: data }`).
+
+3. **Back to page.js**:
+   - The client (page.js) receives the response from **route.js**.
+   - It logs the response (the JSON data) to the console, which you can see in the browser console.
+
+So, yes, you're **getting data from route.js** to page.js, and it's displayed in both the **browser console** and **server terminal**.
+
 
