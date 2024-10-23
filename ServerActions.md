@@ -103,7 +103,7 @@ export default function home () {
 
 # To Submit form and reset the form.
 
-- First we need make a seperate file in which we write this code
+### - **First we need make a seperate file in which we write this code**
 ```js
 app/Actions/server.js
 
@@ -118,7 +118,7 @@ export const submitAction = async (e) => {
 ```
 
 
-- Then we would write this in another file With `Client server` as `use client` 
+### - **Then we would write this in another file With `Client server` as `use client`** 
 ```js
 "use client"
 import { submitAction } from "./Actions/server"
