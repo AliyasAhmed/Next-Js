@@ -10,7 +10,6 @@ Server Actions in Next.js allow us to handle form submissions directly on the se
 ```js
 
 import fs from "fs/promises"
-import { useRef } from "react"
 
 
 export default function home () {
@@ -21,7 +20,7 @@ export default function home () {
     let a = await fs.writeFile('aliyas.txt', `This is how its suppose to save or get data from the server side. My name is ${e.get('name')} and address is ${e.get("Address")} `) // Any thing we did in monodb we can do it here
     console.log(a)
   }
-  let ref = useRef()
+
   return(
     <div className="flex flex-col  items-center justify-center h-screen">
       <form className="" action={(e)=>{submitAction(e); ref.current.reset() }}> {/*  this is when we want to clear the form after submitting*/}
