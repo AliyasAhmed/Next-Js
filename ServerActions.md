@@ -101,3 +101,50 @@ export default function home () {
 - Simplifies code.
 - No need for client-side `fetch` and API routes.
 - Everything stays on the server, improving security for sensitive data like passwords.
+
+# To Submit form and reset the form.
+
+- First we need make a seperate file in which we write this code
+```js
+app/Actions/server.js
+
+"use server" // this means when we run this function everything will run on the server side.
+import fs from "fs/promises"
+export const submitAction = async (e) => {
+
+    console.log(e.get('name'), e.get('Address'))  //with this serveraction we dont have to usally make api to get the data we can do this
+    let a = await fs.writeFile('aliyas.txt', `This is how its suppose to save or get data from the server side. My name is ${e.get('name')} and address is ${e.get("Address")} `) // Any thing we did in monodb we can do it here
+    console.log(a)
+}
+```
+
+
+- Then we would write this in another file With `Client server` as `use client` 
+```js
+"use client"
+import { submitAction } from "./Actions/server"
+import { useRef } from "react"
+
+
+export default function home () {
+
+  let ref = useRef()
+  return(
+    <div className="flex flex-col  items-center justify-center h-screen">
+      <form ref={ref} className="" action={(e)=>{submitAction(e); ref.current.reset() }}> {/*  this is when we want to clear the form after submitting*/}
+      {/* <form className="" action={submitAction}> */} {/* This method will run everything normally unless we need to clear the from on every submit we cant use this that way */}
+      <div className="flex flex-col border border-gray-500 p-7  rounded-lg">
+      
+        <label className="p-5" htmlFor="name">Name</label>
+        <input className="p-2 px-10 rounded-md text-black" name="name" type="name" id ="name" />
+        <label className="p-5" htmlFor="Address">Address</label>
+        <input className="p-2 px-10 rounded-md text-black" name="Address" type="Address" id ="Address" />
+        <button className="border border-gray my-6 p-3 rounded-md hover:bg-slate-700">Submit</button>
+        </div>
+        </form>
+    </div>
+  )
+}
+```
+
+This method is much easier then making an api to fetsh data or post data.
