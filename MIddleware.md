@@ -82,7 +82,7 @@ const About = () => {
 export default About
 ```
 
-### Now we make a `Middleware.js` in outside of the app and we use it to redirect the user to the page we want it can be anypage. lets say user is trying to access `About` page and whenever he try to access that specific page we redirect him to anyother page.
+Now we make a `Middleware.js` in outside of the app and we use it to redirect the user to the page we want it can be anypage. lets say user is trying to access `About` page and whenever he try to access that specific page we redirect him to anyother page.
 
 This is the basic example of middleware Whenever we try to access any other page we will recieve middleware message.
 ```js
@@ -90,7 +90,7 @@ export const middleware = () =>{
     console.log("middleware") //this will show middleware whenever we try to load any of the page this will be the middle content that will show before going on to the actual page.
 }
 ```
-### now if we want user to first login then access any other page we can use middleware to show him login page first to login and then get the access of the page he was looking for.
+Now if we want user to first login then access any other page we can use middleware to show him login page first to login and then get the access of the page he was looking for.
 
 
 
