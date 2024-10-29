@@ -30,7 +30,8 @@ export default function home2() {
     <div  >
       <nav className="flex justify-start gap-10 p-10 ">
       <Link href='/about'>about</Link>
-      <Link href='/Home'>Home</Link>
+      <Link href='/home'>Home</Link>
+      <Link href='/Contact'>Contact</Link>
 
       </nav>
     </div>
@@ -40,6 +41,7 @@ export default function home2() {
 ```
 
 ```js
+app/home/page.js
 
 const Home = () => {
   return (
@@ -54,8 +56,22 @@ export default Home
 ```
 
 ```js
+app/Contact/page.js
 
-const about = () => {
+const Contact = () => {
+  return (
+    <div>
+      This is contact
+    </div>
+  )
+}
+
+export default Contact
+```
+
+```js
+app/about/page.js
+const About = () => {
   return (
     <div>
       THis is about
@@ -63,7 +79,7 @@ const about = () => {
   )
 }
 
-export default about
+export default About
 ```
 
 ### Now we make a `Middleware.js` in outside of the app and we use it to redirect the user to the page we want it can be anypage. lets say user is trying to access `About` page and whenever he try to access that specific page we redirect him to anyother page.
@@ -89,5 +105,32 @@ export const middleware = (req) =>{
 #### Simple solution is to make it redirect to about page if we click on about otherwise no need to redirect it.
 
 ```js
+import { NextResponse } from "next/server" 
 
+export const middleware = (req) =>{
+    if(req.nextUrl.pathname!="/about"){
+
+        return NextResponse.redirect(new URL('/about',req.url)) 
+    }
+}
+
+```
+This will redirect it to the about page when we click on about page else it wont redirect it again and again.
+
+## Matcher
+
+```js
+import { NextResponse } from "next/server" 
+
+export const middleware = (req) =>{
+    // if(req.nextUrl.pathname!="/about"){
+
+        return NextResponse.redirect(new URL('/about',req.url)) 
+    // }
+}
+
+export const config ={ // When we do this it means whenever user try to access contact he will be redirected to the about page other the contact he will be able to aceess everyother page
+    matcher:'/contact/:path*'
+    // matcher:['/contact/:path*, /home/:path'] // THis is for making multiple matcher
+}
 ```
