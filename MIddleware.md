@@ -134,3 +134,5 @@ export const config ={ // When we do this it means whenever user try to access c
     // matcher:['/contact/:path*, /home/:path'] // THis is for making multiple matcher
 }
 ```
+
+Mathcer will give us power to choose pages which we want to give access of and pages which we dont want in this case we want users to be able to aceess `Home` but When they try to access `Contact` The middleware will redirect them to `About`. 
