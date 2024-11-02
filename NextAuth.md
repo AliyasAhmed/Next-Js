@@ -45,7 +45,7 @@ export {handler as GET, handler as POST}
 ```
 In this providers we only have github `Authentication` we can add more like signIn with `Facebook`, `Google` etc.
 
-### GITHUB_ID and GITHUB_SECRET are used to authenticate for signup but the `id` and `secret` are the pair of keys which are generated from github for the individual Developer in my case go to `github/settings/developerOptions/auth` There we have to register app and make secret key and paste it in the env file that we make.
+#### GITHUB_ID and GITHUB_SECRET are used to authenticate for signup but the `id` and `secret` are the pair of keys which are generated from github for the individual Developer in my case go to `github/settings/developerOptions/auth` There we have to register app and make secret key and paste it in the env file that we make.
 
 # .env.local
 
