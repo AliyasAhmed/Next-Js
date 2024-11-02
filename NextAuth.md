@@ -11,6 +11,22 @@ npm
 
 **Make Route for signup Page `api/auth/[...nextauth]/route.js` API Route Setup: The api/auth/[...nextauth]/route.js file tells NextAuth to use GitHub as a login provider.**
 
+The `api/auth/[...nextauth]/route.js` file is a special route file in Next.js used by NextAuth.js to handle authentication requests. Here’s what it does:
+
+1. **Path Structure** (`api/auth/[...nextauth]`): This path with `[...nextauth]` in the brackets is a **catch-all route** in Next.js. It means that any request starting with `/api/auth` will be handled by this file. For example:
+   - `/api/auth/signin`
+   - `/api/auth/signout`
+   - `/api/auth/session`
+
+2. **What it Contains**: Inside this file, you define how NextAuth should handle authentication. It sets up NextAuth with:
+   - **Providers** like GitHub, Google, etc., to log users in.
+   - Any custom settings you might need for NextAuth.
+
+3. **The `handler` Export**: The `handler` in this file is created by calling `NextAuth` and passing it a configuration object (with providers and other options). Then, you export this handler as `GET` and `POST`, which allows NextAuth to handle both types of requests (like checking session details or logging in).
+
+**Example Overview in Simple Words**:
+The code in `route.js` tells NextAuth, "Use GitHub as the login provider, and manage all authentication requests (like logging in or out) through this file."
+
 Inside this Route we set-up for `Github Provider`
 ```js
 import NextAuth from "next-auth";
