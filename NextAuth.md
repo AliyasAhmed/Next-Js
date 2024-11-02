@@ -51,6 +51,11 @@ In this providers we only have github `Authentication` we can add more like sign
 
 OAuth credentials are stored in .env.local to allow GitHub login. Keys and secret will be provided from the env we created.
 
+In this env we have for github only we have
+
+GITHUB_ID=Ov23liTtY77wfAlMxv4d
+GITHUB_SECRET=64bd5c5a0dec899fdaa6f03fde875f2ef627667f
+
 # Page Components
 ```js
 "use client"
