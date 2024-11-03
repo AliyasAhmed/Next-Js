@@ -7,7 +7,7 @@ Instead of building custom authentication, NextAuth handles most of the heavy li
 # Setting Up
 
 npm
-`npm install next-auth`
+`npm install next-auth` or `npm install next-auth --legacy-peer-deps`
 
 **Make Route for signup Page `api/auth/[...nextauth]/route.js` API Route Setup: The api/auth/[...nextauth]/route.js file tells NextAuth to use GitHub as a login provider.**
 
